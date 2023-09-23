@@ -16,10 +16,11 @@ enum class KestrelFlavor(val dimension: FlavorDimension, val applicationSuffix: 
 }
 
 fun configureFlavors(
-    commonExtension: CommonExtension<*, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *>,
     flavorConfigurationBlock: ProductFlavor.(flavor: KestrelFlavor) -> Unit = {}
 ) {
     commonExtension.apply {
+
         flavorDimensions += FlavorDimension.ConventType.name
         productFlavors {
             KestrelFlavor.values().forEach {
