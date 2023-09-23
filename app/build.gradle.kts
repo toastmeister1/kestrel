@@ -1,12 +1,12 @@
 plugins {
     id("kestrel.android.application")
+    id("kestrel.android.application.flavors")
     id("kestrel.android.hilt")
 }
 
 android {
     defaultConfig {
         applicationId = "com.toastmeister1.kestrel"
-        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
