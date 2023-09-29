@@ -40,5 +40,10 @@ gradlePlugin {
             id = "kestrel.kotlin.library"
             implementationClass = "KotlinLibraryConventionPlugin"
         }
+
+        register("androidCompose") {
+            id = "kestrel.android.compose"
+            implementationClass = "AndroidComposeConventionPlugin"
+        }
     }
 }
