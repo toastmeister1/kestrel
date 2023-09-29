@@ -10,8 +10,9 @@ java {
 }
 
 dependencies {
-    compileOnly(libs.android.gradlePlugin)
-    compileOnly(libs.kotlin.gradlePlugin)
+    implementation(libs.android.gradlePlugin)
+    implementation(libs.kotlin.gradlePlugin)
+    implementation(libs.verify.detektPlugin)
 }
 
 gradlePlugin {
@@ -44,6 +45,11 @@ gradlePlugin {
         register("androidCompose") {
             id = "kestrel.android.compose"
             implementationClass = "AndroidComposeConventionPlugin"
+        }
+
+        register("deteKt") {
+            id = "kestrel.verify.detekt"
+            implementationClass = "VerifyDetektConventionPlugin"
         }
     }
 }

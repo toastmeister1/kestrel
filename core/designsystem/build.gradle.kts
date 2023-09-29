@@ -1,6 +1,7 @@
 plugins {
     id("kestrel.android.library")
     id("kestrel.android.compose")
+    id("kestrel.verify.detekt")
 }
 
 android {
