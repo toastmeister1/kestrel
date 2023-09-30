@@ -13,6 +13,7 @@ androidxComposeCompiler = "1.5.3"
 androidxComposeMaterial3 = "1.1.2"
 androidxComposeNavigation = "2.7.3"
 junit4 = "4.13.2"
+kotest = "5.6.2"
 material = "1.9.0"
 junit = "1.1.5"
 detekt = "1.23.0"
@@ -49,6 +50,10 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 
 # verify
 verify-detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+
+# Test
+kotest-runner = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }

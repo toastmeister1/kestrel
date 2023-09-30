@@ -28,6 +28,8 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
 
+    implementation(project(":feature:home"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
