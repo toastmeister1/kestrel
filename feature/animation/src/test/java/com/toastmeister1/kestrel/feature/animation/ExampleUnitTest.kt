@@ -1,4 +1,4 @@
-package com.toastmeister1.kestrel.core.ui
+package com.toastmeister1.kestrel.feature.animation
 
 import org.junit.Test
 

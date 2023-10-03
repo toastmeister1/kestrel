@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.toastmeister1.kestrel.core.ui"
+    namespace = "com.toastmeister1.kestrel.feature.animation"
 
     buildTypes {
         release {
@@ -17,4 +17,5 @@ android {
 
 dependencies {
     implementation(project(":core:designsystem"))
+    implementation(project(":core:ui"))
 }
