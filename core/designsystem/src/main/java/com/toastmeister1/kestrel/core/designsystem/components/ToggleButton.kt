@@ -21,7 +21,7 @@ import com.toastmeister1.kestrel.core.designsystem.theme.KestrelTheme
 fun ToggleButton(
     label: String,
     checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit = { }
+    onCheckedChange: (isChecked: Boolean) -> Unit
 ) {
     val backgroundColor = if (checked) Gray600 else Color.Transparent
     val contentColor = if (checked) Color.White else Gray600
@@ -41,7 +41,7 @@ fun ToggleButton(
             Text(
                 modifier = Modifier.align(Alignment.Center),
                 text = label,
-                style = KestrelTheme.typography.body1
+                style = KestrelTheme.typography.body2
             )
         }
     }
@@ -58,8 +58,8 @@ private fun ToggleButtonPreview() {
             Row(
                 modifier = Modifier.height(32.dp)
             ) {
-                ToggleButton(label = "원", checked = false)
-                ToggleButton(label = "%", checked = true)
+                ToggleButton(label = "원", checked = false, onCheckedChange = {})
+                ToggleButton(label = "%", checked = true, onCheckedChange = {})
             }
         }
     }
