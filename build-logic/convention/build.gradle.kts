@@ -22,6 +22,11 @@ gradlePlugin {
             implementationClass = "AndroidApplicationConventionPlugin"
         }
 
+        register("androidApplicationCompose") {
+            id = "kestrel.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+
         register("androidApplicationFlavors") {
             id = "kestrel.android.application.flavors"
             implementationClass = "AndroidApplicationFlavorConventionPlugin"

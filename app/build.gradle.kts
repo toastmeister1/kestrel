@@ -1,5 +1,6 @@
 plugins {
     id("kestrel.android.application")
+    id("kestrel.android.application.compose")
     id("kestrel.android.application.flavors")
     id("kestrel.android.hilt")
 }

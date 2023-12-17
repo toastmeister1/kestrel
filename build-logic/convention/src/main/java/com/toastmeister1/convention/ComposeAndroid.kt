@@ -28,6 +28,8 @@ internal fun Project.configureComposeAndroid(
             add("implementation", platform(bom))
             add("androidTestImplementation", platform(bom))
 
+
+            add("implementation", libs.findLibrary("androidx.activity.compose").get())
             add("implementation", libs.findLibrary("androidx.compose.foundation").get())
             add("implementation", libs.findLibrary("androidx.compose.material3").get())
             add("implementation", libs.findLibrary("androidx.compose.ui").get())
