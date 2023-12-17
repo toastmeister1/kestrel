@@ -14,9 +14,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+        }
+
         release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
@@ -29,6 +35,7 @@ dependencies {
     implementation(project(":core:domain"))
 
     implementation(project(":feature:home"))
+    implementation(project(":feature:animation"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

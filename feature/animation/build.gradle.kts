@@ -6,13 +6,6 @@ plugins {
 
 android {
     namespace = "com.toastmeister1.kestrel.feature.animation"
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
 }
 
 dependencies {

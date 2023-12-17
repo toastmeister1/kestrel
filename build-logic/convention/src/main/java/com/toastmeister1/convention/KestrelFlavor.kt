@@ -20,7 +20,6 @@ fun configureFlavors(
     flavorConfigurationBlock: ProductFlavor.(flavor: KestrelFlavor) -> Unit = {}
 ) {
     commonExtension.apply {
-
         flavorDimensions += FlavorDimension.ConventType.name
         productFlavors {
             KestrelFlavor.values().forEach {
