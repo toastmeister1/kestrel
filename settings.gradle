@@ -13,6 +13,13 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+/**
+ *  Unable to make progress running work. There are items queued for execution but none of them can be started. ISSUE(refer to the link)
+ *  https://issuetracker.google.com/issues/315023802
+ */
+gradle.startParameter.excludedTaskNames.addAll([":build-logic:convention:testClasses"])
+
 rootProject.name = "Kestrel"
 include ':app'
 include ':core:domain'
