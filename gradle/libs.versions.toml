@@ -2,6 +2,7 @@
 kotlin = "1.9.10"
 kotlinxCoroutines = "1.8.0"
 hilt = "2.51"
+hiltNavigationCompose = "1.2.0"
 androidGradlePlugin = "8.1.4"
 androidxCore = "1.12.0"
 androidxAppCompat = "1.6.1"
@@ -19,7 +20,10 @@ kotest = "5.6.2"
 material = "1.9.0"
 junit = "1.1.5"
 detekt = "1.23.0"
-
+retrofit = "2.11.0"
+retrofitKotlinxSerializationJson = "1.0.0"
+kotlinxSerializationJson = "1.6.3"
+okhttp = "4.12.0"
 
 [libraries]
 android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -33,6 +37,10 @@ junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
+retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
@@ -45,7 +53,8 @@ androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
-androidx-compose-navigation-test = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxComposeNavigation" }
+androidx-compose-navigation-test = { group = "androidx.navigation", name = "navigation-compose-testing", version.ref = "androidxComposeNavigation" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
 # Coroutine
 coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
