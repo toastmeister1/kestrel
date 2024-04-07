@@ -27,6 +27,7 @@ dependencies {
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp.core)
+    implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.junit4)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

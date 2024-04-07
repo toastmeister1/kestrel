@@ -34,8 +34,10 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
+    implementation(project(":core:navigation"))
 
     implementation(project(":feature:home"))
+    implementation(project(":feature:main"))
     implementation(project(":feature:animation"))
 
     implementation(libs.androidx.core.ktx)

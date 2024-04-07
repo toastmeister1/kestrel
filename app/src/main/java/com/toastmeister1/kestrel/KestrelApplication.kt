@@ -5,10 +5,4 @@ import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-internal class KestrelApplication : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-    }
-
-}
+internal class KestrelApplication : Application()
