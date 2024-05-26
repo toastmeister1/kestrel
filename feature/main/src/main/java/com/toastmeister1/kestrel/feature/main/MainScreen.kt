@@ -1,5 +1,8 @@
 package com.toastmeister1.kestrel.feature.main
 
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.with
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.compose.NavHost
@@ -22,7 +25,7 @@ fun MainScreen(navigator: AppComposeNavigator) {
     KestrelTheme {
         NavHost(
             navController = navController,
-            startDestination = KestrelScreens.Home.route
+            startDestination = KestrelScreens.Home.route,
         ) {
             composable(route = KestrelScreens.Home.route) { HomeScreen(navigator) }
 
