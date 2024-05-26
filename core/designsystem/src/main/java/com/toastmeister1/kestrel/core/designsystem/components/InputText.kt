@@ -30,7 +30,7 @@ import java.util.Locale
 fun InputText(
     modifier: Modifier = Modifier,
     initialValue: Float,
-    onValueChange: (value: Float) -> Unit
+    onValueChange: (value: Float) -> Unit,
 ) {
     val format = String.format(locale = Locale.KOREA, "%.1f")
     var text by remember { mutableStateOf(format.format(initialValue)) }
@@ -39,20 +39,20 @@ fun InputText(
         modifier = modifier,
         color = Color.White,
         contentColor = Gray600,
-        shape = RoundedCornerShape(6.dp)
+        shape = RoundedCornerShape(6.dp),
     ) {
         Row(
             modifier = Modifier
                 .widthIn(96.dp)
                 .height(32.dp),
             horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             BasicTextField(
                 value = text,
                 textStyle = KestrelTheme.typography.body2.copy(
                     textAlign = TextAlign.Center,
-                    color = Gray600
+                    color = Gray600,
                 ),
                 onValueChange = {
                     val number = if (it.isBlank()) {
@@ -66,7 +66,7 @@ fun InputText(
                         onValueChange(input)
                     }
                 },
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             )
         }
     }
@@ -78,12 +78,12 @@ private fun InputTextPreview() {
     KestrelTheme {
         Surface(
             border = BorderStroke(width = 1.dp, color = Gray600),
-            shape = RoundedCornerShape(6.dp)
+            shape = RoundedCornerShape(6.dp),
         ) {
             Box {
                 InputText(
                     initialValue = 0.0F,
-                    onValueChange = {}
+                    onValueChange = {},
                 )
             }
         }

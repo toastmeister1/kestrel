@@ -15,6 +15,6 @@ internal abstract class NavigationModule {
     @Binds
     @Singleton
     abstract fun provideAppComposeNavigator(
-        navigator: KestrelNavigator
+        navigator: KestrelNavigator,
     ): AppComposeNavigator
 }

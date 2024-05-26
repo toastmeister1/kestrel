@@ -43,7 +43,7 @@ import kotlin.math.max
 internal fun AnimatedCounterText(
     count: Int,
     style: TextStyle,
-    color: Color = Color.Black
+    color: Color = Color.Black,
 ) {
     val alpha = remember { Animatable(0F) }
     var number by remember { mutableIntStateOf(0) }
@@ -72,13 +72,13 @@ internal fun AnimatedCounterText(
         transitionSpec = {
             (slideInVertically(animationSpec = tween(durationMillis = 200)) { -it })
                 .togetherWith(slideOutVertically(animationSpec = tween(durationMillis = 200)) { it } + fadeOut())
-        }
+        },
     ) { char ->
         Text(
             text = char.toString(),
             style = style,
             color = color,
-            softWrap = false
+            softWrap = false,
         )
     }
 }
@@ -119,7 +119,7 @@ fun Counter(
     count: Int,
     modifier: Modifier = Modifier,
     style: TextStyle,
-    color: Color = Color.Black
+    color: Color = Color.Black,
 ) {
     var localText by remember { mutableStateOf(count.toString()) }
 
@@ -135,7 +135,7 @@ fun Counter(
         modifier = modifier
             .animateContentSize(animationSpec = tween())
             .fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         localText.forEach {
             if (it.isDigit()) {
@@ -147,7 +147,7 @@ fun Counter(
         Spacer(modifier = Modifier.width(4.dp))
         Text(
             style = KestrelTheme.typography.h2,
-            text = "원"
+            text = "원",
         )
     }
 }
@@ -173,7 +173,7 @@ sealed interface NumberDigit {
     }
 
     data class Number(
-        override val value: Char
+        override val value: Char,
     ) : NumberDigit
 
     companion object {
@@ -199,7 +199,7 @@ class NumberCalculator {
 
     fun calculate(
         localValue: Int,
-        updateValue: Int
+        updateValue: Int,
     ): List<NumberDigitChangeState> {
         val changeStates = mutableListOf<NumberDigitChangeState>()
 

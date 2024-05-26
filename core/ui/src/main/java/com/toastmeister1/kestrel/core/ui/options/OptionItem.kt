@@ -23,28 +23,28 @@ import com.toastmeister1.kestrel.core.designsystem.theme.KestrelTheme
 fun OptionItem(
     modifier: Modifier = Modifier,
     label: String,
-    contents: @Composable () -> Unit
+    contents: @Composable () -> Unit,
 ) {
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
             modifier = Modifier.width(IntrinsicSize.Min),
             text = label,
             style = KestrelTheme.typography.h2,
-            textAlign = TextAlign.Right
+            textAlign = TextAlign.Right,
         )
 
         Spacer(modifier = Modifier.width(24.dp))
 
         Surface(
             border = BorderStroke(width = 1.dp, color = Gray600),
-            shape = RoundedCornerShape(6.dp)
+            shape = RoundedCornerShape(6.dp),
         ) {
             Row(
-                modifier = Modifier.height(32.dp)
+                modifier = Modifier.height(32.dp),
             ) {
                 contents()
             }

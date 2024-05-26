@@ -12,5 +12,5 @@ data class MovieDetailResponse(
     @SerialName("overview")
     val overview: String,
     @SerialName("poster_path")
-    val posterPath: String
+    val posterPath: String,
 )

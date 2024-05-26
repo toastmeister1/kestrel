@@ -11,11 +11,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun OptionBox(
     optionItems: List<OptionItemState>,
-    bottomContent: @Composable () -> Unit
+    bottomContent: @Composable () -> Unit,
 ) {
     Column(
         modifier = Modifier.width(IntrinsicSize.Max),
-        verticalArrangement = Arrangement.spacedBy(24.dp)
+        verticalArrangement = Arrangement.spacedBy(24.dp),
     ) {
         optionItems.forEach { option ->
             when (option) {

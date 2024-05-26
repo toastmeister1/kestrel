@@ -8,6 +8,6 @@ interface TMDBApi {
 
     @GET("movie/movie_id\n")
     suspend fun fetchDetail(
-        @Path("movie_id") movieId: Int
+        @Path("movie_id") movieId: Int,
     ): MovieDetailResponse
 }

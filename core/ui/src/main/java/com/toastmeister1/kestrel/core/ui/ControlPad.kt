@@ -9,13 +9,13 @@ import com.toastmeister1.kestrel.core.designsystem.theme.KestrelTheme
 @Composable
 fun ControlPad(
     leftContent: @Composable BoxScope.() -> Unit,
-    rightContent: @Composable BoxScope.() -> Unit
+    rightContent: @Composable BoxScope.() -> Unit,
 ) {
     KestrelTheme {
         SplitComponent(
             modifier = Modifier.fillMaxSize(),
             leftContent = leftContent,
-            rightContent = rightContent
+            rightContent = rightContent,
         )
     }
 }

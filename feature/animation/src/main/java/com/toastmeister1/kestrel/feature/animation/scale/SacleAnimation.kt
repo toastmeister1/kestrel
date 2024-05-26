@@ -46,7 +46,7 @@ fun ScaleAnimatedText(
         modifier = Modifier.animateContentSize(animationSpec = tween(durationMillis = 500)),
         text = localNumber.toString(),
         style = KestrelTheme.typography.h2,
-        color = Color.Black
+        color = Color.Black,
     )
 }
 
@@ -69,13 +69,13 @@ fun ScaleAnimationTest() {
 
         Box(
             modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             Column(modifier = Modifier.align(Alignment.Center)) {
                 Row {
                     Counter(
                         count = number,
-                        style = KestrelTheme.typography.h1
+                        style = KestrelTheme.typography.h1,
                     )
                     Spacer(Modifier.width(2.dp))
                 }

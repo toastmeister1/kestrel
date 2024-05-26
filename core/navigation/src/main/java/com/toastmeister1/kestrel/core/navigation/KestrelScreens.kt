@@ -4,7 +4,7 @@ import androidx.navigation.NamedNavArgument
 
 sealed class KestrelScreens(
     val route: String,
-    val navArguments: List<NamedNavArgument> = emptyList()
+    val navArguments: List<NamedNavArgument> = emptyList(),
 ) {
     data object Home : KestrelScreens(route = "home", navArguments = emptyList())
 

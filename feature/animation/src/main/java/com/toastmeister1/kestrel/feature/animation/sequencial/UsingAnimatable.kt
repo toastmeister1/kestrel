@@ -67,50 +67,50 @@ private fun AnimationSequenceAlphaUsingTransitionPreview() {
 
     Column(modifier = Modifier.fillMaxSize()) {
         ComponentA(
-            modifier = Modifier.graphicsLayer { this.alpha = screenAState.aComponentAlpha }
+            modifier = Modifier.graphicsLayer { this.alpha = screenAState.aComponentAlpha },
         )
         MiddleComponent(
-            modifier = Modifier.graphicsLayer { this.alpha = screenAState.bComponentAlpha }
+            modifier = Modifier.graphicsLayer { this.alpha = screenAState.bComponentAlpha },
         )
         ComponentB(
-            modifier = Modifier.graphicsLayer { this.alpha = screenAState.middleComponentAlpha }
+            modifier = Modifier.graphicsLayer { this.alpha = screenAState.middleComponentAlpha },
         )
     }
 }
 
 @Composable
 private fun ComponentA(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
             .fillMaxWidth()
             .height(120.dp)
-            .background(Color.Red)
+            .background(Color.Red),
     )
 }
 
 @Composable
 private fun ComponentB(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
             .fillMaxWidth()
             .height(120.dp)
-            .background(Color.Blue)
+            .background(Color.Blue),
     )
 }
 
 @Composable
 private fun ColumnScope.MiddleComponent(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
             .fillMaxWidth()
             .height(0.dp)
             .weight(1F)
-            .background(Color.DarkGray)
+            .background(Color.DarkGray),
     )
 }

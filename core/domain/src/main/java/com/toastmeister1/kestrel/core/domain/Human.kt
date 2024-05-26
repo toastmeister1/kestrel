@@ -1,7 +1,7 @@
 package com.toastmeister1.kestrel.core.domain
 
 data class Human(
-    val a: Int
+    val a: Int,
 ) {
 
     fun of(name: String): Human {
@@ -10,5 +10,4 @@ data class Human(
             else -> Human(a = 2)
         }
     }
-
 }

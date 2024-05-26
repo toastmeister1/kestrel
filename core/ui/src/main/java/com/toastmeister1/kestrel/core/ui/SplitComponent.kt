@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 fun SplitComponent(
     modifier: Modifier,
     leftContent: @Composable BoxScope.() -> Unit,
-    rightContent: @Composable BoxScope.() -> Unit
+    rightContent: @Composable BoxScope.() -> Unit,
 ) {
     Row(modifier = modifier.fillMaxSize()) {
         Box(
@@ -23,7 +23,7 @@ fun SplitComponent(
                 .widthIn(0.dp)
                 .weight(1F)
                 .fillMaxHeight(),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             leftContent()
         }
@@ -33,7 +33,7 @@ fun SplitComponent(
                 .widthIn(0.dp)
                 .weight(1F)
                 .fillMaxHeight(),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             rightContent()
         }

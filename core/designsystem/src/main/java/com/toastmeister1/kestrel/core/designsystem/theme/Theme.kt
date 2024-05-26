@@ -7,7 +7,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 @Composable
 fun KestrelTheme(content: @Composable () -> Unit) {
     CompositionLocalProvider(
-        LocalTypography provides Typography
+        LocalTypography provides Typography,
     ) {
         MaterialTheme(content = content)
     }

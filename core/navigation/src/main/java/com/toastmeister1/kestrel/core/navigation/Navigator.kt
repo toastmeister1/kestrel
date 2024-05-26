@@ -33,7 +33,7 @@ abstract class AppComposeNavigator : Navigator() {
 
             is NavigationCommand.PopUpToRoute -> popBackStack(
                 navigationCommand.route,
-                navigationCommand.inclusive
+                navigationCommand.inclusive,
             )
 
             is NavigationCommand.NavigateUpWithResult<*> -> {
@@ -43,12 +43,12 @@ abstract class AppComposeNavigator : Navigator() {
     }
 
     private fun NavController.navUpWithResult(
-        navigationCommand: NavigationCommand.NavigateUpWithResult<*>
+        navigationCommand: NavigationCommand.NavigateUpWithResult<*>,
     ) {
         val backStackEntry = navigationCommand.route?.let { getBackStackEntry(it) } ?: previousBackStackEntry
         backStackEntry?.savedStateHandle?.set(
             navigationCommand.key,
-            navigationCommand.result
+            navigationCommand.result,
         )
 
         navigationCommand.route?.let {

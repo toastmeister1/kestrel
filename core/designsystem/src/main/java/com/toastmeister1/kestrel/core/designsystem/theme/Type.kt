@@ -14,7 +14,7 @@ private val Pretendard = FontFamily(
     Font(R.font.pretendard_semi_bold, FontWeight.SemiBold),
     Font(R.font.pretendard_medium, FontWeight.Medium),
     Font(R.font.pretendard_regular, FontWeight.Normal),
-    Font(R.font.pretendard_light, FontWeight.Light)
+    Font(R.font.pretendard_light, FontWeight.Light),
 )
 
 internal val Typography = KestrelTypography(
@@ -22,44 +22,44 @@ internal val Typography = KestrelTypography(
         fontFamily = Pretendard,
         fontSize = 24.sp,
         lineHeight = 32.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
     ),
     h2 = TextStyle(
         fontFamily = Pretendard,
         fontSize = 18.sp,
         lineHeight = 24.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
     ),
     subtitle1 = TextStyle(
         fontFamily = Pretendard,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        fontWeight = FontWeight.SemiBold
+        fontWeight = FontWeight.SemiBold,
     ),
     subtitle2 = TextStyle(
         fontFamily = Pretendard,
         fontSize = 14.sp,
         lineHeight = 20.sp,
-        fontWeight = FontWeight.SemiBold
+        fontWeight = FontWeight.SemiBold,
     ),
     body1 = TextStyle(
         fontFamily = Pretendard,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        fontWeight = FontWeight.Medium
+        fontWeight = FontWeight.Medium,
     ),
     body2 = TextStyle(
         fontFamily = Pretendard,
         fontSize = 14.sp,
         lineHeight = 20.sp,
-        fontWeight = FontWeight.Normal
+        fontWeight = FontWeight.Normal,
     ),
     caption1 = TextStyle(
         fontFamily = Pretendard,
         fontSize = 12.sp,
         lineHeight = 20.sp,
-        fontWeight = FontWeight.Medium
-    )
+        fontWeight = FontWeight.Medium,
+    ),
 )
 
 @Immutable
@@ -70,7 +70,7 @@ data class KestrelTypography(
     val subtitle2: TextStyle,
     val body1: TextStyle,
     val body2: TextStyle,
-    val caption1: TextStyle
+    val caption1: TextStyle,
 )
 
 val LocalTypography = staticCompositionLocalOf {
@@ -81,6 +81,6 @@ val LocalTypography = staticCompositionLocalOf {
         subtitle2 = TextStyle.Default,
         body1 = TextStyle.Default,
         body2 = TextStyle.Default,
-        caption1 = TextStyle.Default
+        caption1 = TextStyle.Default,
     )
 }

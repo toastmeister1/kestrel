@@ -13,7 +13,7 @@ class AuthenticationInterceptor @Inject constructor() : Interceptor {
             url(
                 original.url.newBuilder().apply {
                     addHeader(name = "Authorization", value = BuildConfig.TMDB_API_KEY)
-                }.build()
+                }.build(),
             )
         }.method(original.method, original.body).build()
         return chain.proceed(request)

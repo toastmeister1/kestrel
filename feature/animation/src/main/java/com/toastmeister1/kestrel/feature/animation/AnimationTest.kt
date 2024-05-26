@@ -54,9 +54,9 @@ private fun AScreenTest() {
                     },
                     convertToVector = { value ->
                         AnimationVector(value.toFloat())
-                    }
+                    },
                 ),
-                animationSpec = springAnimation
+                animationSpec = springAnimation,
             ) { value, velocity ->
                 size = value.dp
             }
@@ -72,22 +72,22 @@ private fun AScreenTest() {
                     optionItems = listOf(
                         OptionItemState.InputText(
                             label = "dumpingRatio",
-                            initialValue = 0.5F
+                            initialValue = 0.5F,
                         ).apply
-                        {
-                            dampingRatio = initialValue
-                            onChangeValue = { dampingRatio = it }
-                        },
+                            {
+                                dampingRatio = initialValue
+                                onChangeValue = { dampingRatio = it }
+                            },
                         OptionItemState.InputText(
                             label = "stiffness",
-                            initialValue = 500F
+                            initialValue = 500F,
                         ).apply {
                             stiffness = initialValue
                             onChangeValue = { stiffness = it }
                         },
                         OptionItemState.InputText(
                             label = "visibilityThresholds",
-                            initialValue = 0.0F
+                            initialValue = 0.0F,
                         ).apply {
                             onChangeValue = { visibilityThresholds = it }
                         },
@@ -96,18 +96,18 @@ private fun AScreenTest() {
                                 stiffness = 0F
                                 dampingRatio = 0F
                             }
-                        }
-                    )
+                        },
+                    ),
                 ) {
                     Row(horizontalArrangement = Arrangement.Center) {
                         Button(
-                            onClick = { isAnimationStart = true }
+                            onClick = { isAnimationStart = true },
                         ) {
                             Text(text = "Start")
                         }
 
                         Button(
-                            onClick = { size = testState.initialState }
+                            onClick = { size = testState.initialState },
                         ) {
                             Text(text = "Reset")
                         }
@@ -124,23 +124,23 @@ private fun AScreenTest() {
 //                                stiffness = stiffness
 //                            )
 //                        )
-                        .size(size)
+                        .size(size),
                 )
-            }
+            },
         )
     }
 }
 
 data class SpringAnimationTestState(
     override val initialState: Dp,
-    override val targetState: Dp
+    override val targetState: Dp,
 
 ) : AnimationTestState<Dp> {
 
     data class State(
         val dumpingRatio: Float,
         val stiffness: Float,
-        val visibilityThresholds: Float
+        val visibilityThresholds: Float,
     )
 }
 

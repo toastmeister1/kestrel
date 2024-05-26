@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import com.toastmeister1.kestrel.core.navigation.AppComposeNavigator
 import com.toastmeister1.kestrel.core.navigation.KestrelScreens
 

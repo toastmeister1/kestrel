@@ -14,17 +14,17 @@ fun ToggleOptionComponent(
     label: String,
     items: List<String>,
     toggleState: ToggleSetState = rememberToggleSetState(),
-    onChangeActiveItem: (checkedIndex: Int) -> Unit
+    onChangeActiveItem: (checkedIndex: Int) -> Unit,
 ) {
     OptionItem(
         modifier = modifier,
-        label = label
+        label = label,
     ) {
         items.forEachIndexed { index, value ->
             ToggleButton(
                 label = value,
                 checked = toggleState.isChecked(index),
-                onCheckedChange = { onChangeActiveItem(toggleState.check(index)) }
+                onCheckedChange = { onChangeActiveItem(toggleState.check(index)) },
             )
         }
     }
@@ -46,5 +46,4 @@ class ToggleSetState(initialCheckedIndex: Int = 0) {
         checkedIndex.value = index
         return checkedIndex.value
     }
-
 }

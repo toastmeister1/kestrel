@@ -9,11 +9,11 @@ fun InputTextOptionComponents(
     modifier: Modifier = Modifier,
     label: String,
     initialValue: Float = 0.0F,
-    onValueChange: (Float) -> Unit
+    onValueChange: (Float) -> Unit,
 ) {
     OptionItem(
         modifier = modifier,
-        label = label
+        label = label,
     ) {
         InputText(
             initialValue = initialValue,

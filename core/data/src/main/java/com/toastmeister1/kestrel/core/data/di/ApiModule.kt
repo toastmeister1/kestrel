@@ -41,7 +41,7 @@ internal object ApiModule {
     fun provideTMDBApi(
         okHttpClient: OkHttpClient.Builder,
         converterFactory: Converter.Factory,
-        authInterceptor: AuthenticationInterceptor
+        authInterceptor: AuthenticationInterceptor,
     ): TMDBApi {
         val client = okHttpClient.addInterceptor(authInterceptor).build()
 
@@ -58,7 +58,7 @@ internal object ApiModule {
     fun provideUnsplashApi(
         okHttpClient: OkHttpClient.Builder,
         converterFactory: Converter.Factory,
-        authInterceptor: AuthenticationInterceptor
+        authInterceptor: AuthenticationInterceptor,
     ): UnsplashApi {
         val client = okHttpClient.addInterceptor(authInterceptor).build()
 
