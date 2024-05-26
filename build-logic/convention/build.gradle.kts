@@ -12,7 +12,7 @@ java {
 dependencies {
     implementation(libs.android.gradlePlugin)
     implementation(libs.kotlin.gradlePlugin)
-    implementation(libs.verify.detektPlugin)
+    implementation(libs.spotless.gradlePlugin)
 }
 
 gradlePlugin {
@@ -52,9 +52,9 @@ gradlePlugin {
             implementationClass = "AndroidComposeConventionPlugin"
         }
 
-        register("deteKt") {
-            id = "kestrel.verify.detekt"
-            implementationClass = "VerifyDetektConventionPlugin"
+        register("spotless") {
+            id = "kestrel.spotless"
+            implementationClass = "SpotlessConventionPlugin"
         }
     }
 }

@@ -2,7 +2,7 @@ plugins {
     id("kestrel.android.library")
     id("kestrel.android.hilt")
     id("kestrel.android.compose")
-    id("kestrel.verify.detekt")
+    id("kestrel.spotless")
 }
 
 android {

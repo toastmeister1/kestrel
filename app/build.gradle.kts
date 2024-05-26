@@ -3,7 +3,7 @@ plugins {
     id("kestrel.android.application.compose")
     id("kestrel.android.application.flavors")
     id("kestrel.android.hilt")
-    id("kestrel.verify.detekt")
+    id("kestrel.spotless")
 }
 
 android {

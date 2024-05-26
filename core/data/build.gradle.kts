@@ -2,9 +2,9 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
 plugins {
     id("kestrel.android.library")
-    id("kestrel.verify.detekt")
     id("kestrel.android.hilt")
     kotlin("plugin.serialization")
+    id("kestrel.spotless")
 }
 
 android {
