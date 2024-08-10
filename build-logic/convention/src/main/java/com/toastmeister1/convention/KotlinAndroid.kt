@@ -3,11 +3,10 @@ package com.toastmeister1.convention
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.api.plugins.ExtensionAware
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 /**
@@ -52,17 +51,9 @@ internal fun Project.configureKotlinJvm() {
 private fun Project.configureKotlinOptions() {
     // Use withType to workaround https://youtrack.jetbrains.com/issue/KT-55947
     tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions {
-            freeCompilerArgs = freeCompilerArgs + listOf(
-                "-opt-in=kotlin.RequiresOptIn",
-                "-opt-in=kotlin.Experimental"
-            )
-
-            jvmTarget = JavaVersion.VERSION_17.toString()
+        compilerOptions {
+            freeCompilerArgs.addAll("-opt-in=kotlin.RequiresOptIn","-opt-in=kotlin.Experimental")
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
-}
-
-fun CommonExtension<*, *, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
-    (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }
