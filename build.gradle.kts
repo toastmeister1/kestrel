@@ -6,6 +6,10 @@ buildscript {
         google()
         mavenCentral()
     }
+
+    dependencies {
+        classpath(kotlin("gradle-plugin", version = "2.0.10"))
+    }
 }
 
 /**
@@ -22,4 +26,5 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.spotless) apply false
+    alias(libs.plugins.ksp) apply false
 }

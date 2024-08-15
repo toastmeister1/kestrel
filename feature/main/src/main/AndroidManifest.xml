@@ -7,6 +7,13 @@
             android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Kestrel">
+
+        </activity>
+
+        <activity android:name="com.toastmeister1.kestrel.feature.home.FullScreenTestActivity"
+            android:exported="true"
+            android:label="FullScreenTestActivity"
+            android:theme="@style/Theme.Kestrel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
