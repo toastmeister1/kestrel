@@ -17,16 +17,12 @@ class UiStateExtensionProcessor(
     private val visitor = UiStateExtensionVisitor(codeGenerator, logger)
 
     override fun process(resolver: Resolver): List<KSAnnotated> {
-        logger.warn("## start")
-        // GenerateDataClass 어노테이션이 붙은 클래스 찾기
         val symbols = resolver.getSymbolsWithAnnotation(UiStateExtension::class.java.name)
 
         symbols
             .filter(KSAnnotated::validate)
             .filter { it is KSClassDeclaration }
-            .forEach {
-                it.accept(visitor, Unit)
-            }
+            .forEach { it.accept(visitor, Unit) }
 
         return emptyList()
     }

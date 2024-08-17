@@ -9,6 +9,6 @@ class UiStateExtensionProvider : SymbolProcessorProvider {
     override fun create(environment: SymbolProcessorEnvironment): SymbolProcessor =
         UiStateExtensionProcessor(
             codeGenerator = environment.codeGenerator,
-            logger = environment.logger,
+            logger = environment.logger
         )
 }
