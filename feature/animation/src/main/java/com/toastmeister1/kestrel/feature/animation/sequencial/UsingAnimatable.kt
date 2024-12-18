@@ -18,7 +18,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 private fun rememberScreenAState() = remember { ScreenAState() }
@@ -37,10 +39,17 @@ private class ScreenAState {
     val middleComponentAlpha
         get() = _middleComponentAlpha.value
 
-    suspend fun animateEnterAnimation() {
-        _aComponentAlpha.animateTo(VISIBLE, tween(durationMillis = 500))
-        _bComponentAlpha.animateTo(VISIBLE, tween(durationMillis = 500))
-        _middleComponentAlpha.animateTo(VISIBLE, tween(durationMillis = 500))
+    private val _transitionY = Animatable(120F)
+    val transitionY: Float
+        get() = _transitionY.value
+
+    suspend fun animateEnterAnimation() = coroutineScope {
+
+        val s1 = launch { _aComponentAlpha.animateTo(VISIBLE, tween(durationMillis = 600)) }
+        val s2 = launch { _transitionY.animateTo(0F, tween(300)) }
+
+        s1.join()
+        s2.join()
     }
 
     private companion object {
@@ -67,13 +76,19 @@ private fun AnimationSequenceAlphaUsingTransitionPreview() {
 
     Column(modifier = Modifier.fillMaxSize()) {
         ComponentA(
-            modifier = Modifier.graphicsLayer { this.alpha = screenAState.aComponentAlpha },
+            modifier = Modifier.graphicsLayer {
+                this.alpha = screenAState.aComponentAlpha
+                this.translationY = screenAState.transitionY
+                                              },
         )
         MiddleComponent(
-            modifier = Modifier.graphicsLayer { this.alpha = screenAState.bComponentAlpha },
+            modifier = Modifier.graphicsLayer { this.alpha = screenAState.middleComponentAlpha },
         )
         ComponentB(
-            modifier = Modifier.graphicsLayer { this.alpha = screenAState.middleComponentAlpha },
+            modifier = Modifier.graphicsLayer {
+                this.alpha = screenAState.bComponentAlpha
+                this.translationY = screenAState.transitionY
+            },
         )
     }
 }

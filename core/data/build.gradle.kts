@@ -23,6 +23,9 @@ fun getApiKey(propertyName: String): String {
 }
 
 dependencies {
+    implementation(project(":core:coroutine"))
+    implementation(project(":core:domain"))
+
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.kotlinx.serialization.json)
