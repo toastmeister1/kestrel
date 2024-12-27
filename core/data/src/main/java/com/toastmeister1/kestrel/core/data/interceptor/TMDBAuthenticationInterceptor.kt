@@ -5,14 +5,14 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
 
-class AuthenticationInterceptor @Inject constructor() : Interceptor {
+class TMDBAuthenticationInterceptor @Inject constructor() : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val original = chain.request()
         val request = original.newBuilder().apply {
             url(
                 original.url.newBuilder().apply {
-                    addHeader(name = "Authorization", value = BuildConfig.TMDB_API_KEY)
+                    addHeader(name = "Authorization", value = "Bearer ${BuildConfig.TMDB_API_KEY}")
                 }.build(),
             )
         }.method(original.method, original.body).build()

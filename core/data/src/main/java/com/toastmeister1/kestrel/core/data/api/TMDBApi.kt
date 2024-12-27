@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface TMDBApi {
 
-    @GET("movie/movie_id\n")
+    @GET("movie/movie_id")
     suspend fun fetchDetail(
         @Path("movie_id") movieId: Int,
     ): ApiResult<MovieDetailResponse>
@@ -17,6 +17,11 @@ interface TMDBApi {
     @GET("search/collection")
     suspend fun searchQuery(
         @Query("query") query: String,
+        @Query("page") page: Int
+    ): ApiResult<MovieSearchResponse>
+
+    @GET("movie/popular")
+    suspend fun fetchPopular(
         @Query("page") page: Int
     ): ApiResult<MovieSearchResponse>
 }

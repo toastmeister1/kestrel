@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         buildConfigField("String", "TMDB_BASE_URL", "\"https://api.themoviedb.org/3/\"")
-        buildConfigField("String", "TMDB_API_KEY",  "\"${getApiKey("TMDB_API_KEY")}\"")
+        buildConfigField("String", "TMDB_API_KEY", getApiKey("TMDB_API_KEY"))
         buildConfigField("String", "UNSPLASH_BASE_URL", "\"blank\"")
         buildConfigField("String", "UNSPLASH_API_KEY", "\"blank\"")
     }
@@ -24,6 +24,7 @@ fun getApiKey(propertyName: String): String {
 
 dependencies {
     implementation(project(":core:coroutine"))
+    implementation(project(":core:model"))
 
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)

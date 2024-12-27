@@ -14,5 +14,5 @@ internal object ApiModule {
 
     @Provides
     @Singleton
-    fun provideTMDBApi(retrofit: Retrofit): TMDBApi = retrofit.create(TMDBApi::class.java)
+    fun provideTMDBApi(@TMDBClient retrofit: Retrofit): TMDBApi = retrofit.create(TMDBApi::class.java)
 }
