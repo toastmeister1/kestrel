@@ -22,7 +22,6 @@ gradle.startParameter.excludedTaskNames.addAll([":build-logic:convention:testCla
 
 rootProject.name = "Kestrel"
 include ':app'
-include ':core:domain'
 include ':core:ui'
 include ':core:designsystem'
 include ':core:data'
@@ -33,3 +32,4 @@ include ':feature:main'
 include ':processor'
 include ':core:common'
 include ':core:coroutine'
+include ':core:model'

@@ -20,6 +20,7 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:ui"))
     implementation(project(":core:navigation"))
+    implementation(project(":core:data"))
 
     implementation(project(":feature:home"))
     implementation(project(":feature:animation"))
